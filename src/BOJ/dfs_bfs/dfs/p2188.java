@@ -1,4 +1,4 @@
-package dfs_bfs.dfs;
+package BOJ.dfs_bfs.dfs;
 
 import java.util.ArrayList;
 import java.util.Scanner;
