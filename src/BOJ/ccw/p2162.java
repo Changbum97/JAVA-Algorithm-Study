@@ -40,25 +40,24 @@ public class p2162 {
             }
         }
 
-        // 그룹 카운트
+        // 그룹 카운트 및 최대값 구하기
         Map<Integer, Integer> group = new HashMap<>();
+        int maxSize = 1;
+
         for(int i = 0 ; i < n ; i ++) {
             int iParent = getParent(parent[i]);
 
             if( group.containsKey(iParent) ) {
                 // 이미 전에 그룹이 추가되어 었으면 + 1
                 group.put(iParent, group.get(iParent) + 1);
+
+                // 최대값 갱신
+                if(maxSize < group.get(iParent)) {
+                    maxSize = group.get(iParent);
+                }
             } else {
                 // 그룹에 추가되어 있지 않으면 새로 생성
                 group.put(iParent, 1);
-            }
-        }
-
-        // 최대값 구하기
-        int maxSize = 0;
-        for(Map.Entry<Integer, Integer> entry : group.entrySet() ) {
-            if(maxSize < entry.getValue()) {
-                maxSize = entry.getValue();
             }
         }
 
