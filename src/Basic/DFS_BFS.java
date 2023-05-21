@@ -1,7 +1,6 @@
-package Basic;
-
 // https://www.acmicpc.net/problem/1260
-// DFS와 BFS
+
+package Basic;
 
 import java.util.*;
 
