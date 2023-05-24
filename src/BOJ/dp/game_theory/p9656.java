@@ -1,4 +1,4 @@
-package BOJ.dp;
+package BOJ.dp.game_theory;
 
 import java.util.Scanner;
 
