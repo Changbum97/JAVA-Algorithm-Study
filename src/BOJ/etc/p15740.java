@@ -11,8 +11,6 @@ public class p15740 {
         String a = sc.next();
         String b = sc.next();
 
-        BigDecimal aa = new BigDecimal(a);
-        BigDecimal bb = new BigDecimal(b);
-        System.out.println(aa.add(bb));
+        System.out.println(new BigDecimal(a).add(new BigDecimal(b)));
     }
 }
