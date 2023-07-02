@@ -9,8 +9,8 @@ public class _format {
 
     static class Solution {
         public int solution(int input) {
-            int answer = 1;
-            return answer;
+            int output = input * input;
+            return output;
         }
     }
 }
