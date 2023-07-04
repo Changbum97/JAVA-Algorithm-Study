@@ -1,13 +1,11 @@
 package Programmers._codingTest;
 
 // https://school.programmers.co.kr/learn/courses/15008/lessons/121686
-/**
- * Sort, Priority Queue, Comparable 사용 예제
- */
+// Sort, Priority Queue, Comparable 사용 예제
 
 import java.util.*;
 
-public class p121686 {
+public class Sort_PQ_Comparable_Example {
 
     public static void main(String[] args) {
         Solution s = new Solution();
