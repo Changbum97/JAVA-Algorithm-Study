@@ -6,7 +6,7 @@
   - for (int i = 0 ; i < S.length ; i ++)
     - for (int j = 0 ; j < S\[i].length() ; j ++)
 
-## List(ArrayList 정렬)
+## List(ArrayList) 정렬
 
 - List<Integer> xList = new ArrayList<>()를 정렬하는 경우
   - 오름차순 정렬 : Collections.sort(xList);
@@ -20,3 +20,10 @@
 - 다른 클래스
   - Solution 클래스 내부의 solution 클래스 외부에 작성
   - public int solve() { }
+
+## Priority Queue
+
+- minHeap => 작은 수 부터 출력
+  -  PriorityQueue<Integer> minHeap = new PriorityQueue<>();
+- maxHeap => 큰 수 부터 출력
+  - PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
