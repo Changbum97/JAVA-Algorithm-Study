@@ -3,7 +3,7 @@ package Programmers._codingTest;
 // https://school.programmers.co.kr/learn/courses/30/lessons/150368
 // DFS LV2 예제
 
-public class Dfs_lv2_Example {
+public class Dfs_Lv2_Example {
 
     public static void main(String[] args) {
         Solution s = new Solution();
