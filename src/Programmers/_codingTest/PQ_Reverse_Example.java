@@ -1,5 +1,8 @@
 package Programmers._codingTest;
 
+// https://school.programmers.co.kr/learn/courses/30/lessons/42628
+// Priority Queue 활용 예제 (오름차순, 내림차순)
+
 import java.util.*;
 
 public class PQ_Reverse_Example {
