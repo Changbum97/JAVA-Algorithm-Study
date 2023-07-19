@@ -27,3 +27,9 @@
   -  PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 - maxHeap => 큰 수 부터 출력
   - PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+
+## Queue
+
+- FIFO
+- BFS에서 활용
+- Queue<Node> queue = new LinkedList<>();
