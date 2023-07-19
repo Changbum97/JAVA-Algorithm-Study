@@ -1,6 +1,9 @@
 package Programmers._codingTest;
 
-public class BinarySearch_Example {
+// https://school.programmers.co.kr/learn/courses/30/lessons/64062
+// BinarySearch LV3 예제
+
+public class BinarySearch_Lv3_Example {
 
     public static void main(String[] args) {
         Solution s = new Solution();
