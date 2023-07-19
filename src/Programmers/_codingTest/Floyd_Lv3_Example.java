@@ -1,5 +1,8 @@
 package Programmers._codingTest;
 
+// https://school.programmers.co.kr/learn/courses/30/lessons/72413
+// Floyd 활용 예제
+
 public class Floyd_Lv3_Example {
     public static void main(String[] args) {
         Solution s = new Solution();
