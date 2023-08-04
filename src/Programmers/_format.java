@@ -13,4 +13,17 @@ public class _format {
             return output;
         }
     }
+
+    // Array Test
+    static boolean test(int[] result, int answer[]) {
+        if (result.length != answer.length) return false;
+
+        for (int i = 0 ; i < result.length ; i ++) {
+            if (result[i] != answer[i]) {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
