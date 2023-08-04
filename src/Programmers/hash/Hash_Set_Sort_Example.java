@@ -1,4 +1,4 @@
-package Programmers._coding_test;
+package Programmers.hash;
 
 /**
  * 전화번호 목록
