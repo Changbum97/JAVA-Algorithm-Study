@@ -1,4 +1,4 @@
-package Programmers._coding_test;
+package Programmers.hash;
 
 /**
  * 폰켓몬
