@@ -1,9 +1,9 @@
-package Programmers._coding_test;
+package Programmers.hash;
 
 /**
  * 완주하지 못한 선수
  * https://school.programmers.co.kr/learn/courses/30/lessons/42576
- * Hash와 Map을 이용한 예제
+ * Hash와 Map을 사용한 예제
  */
 
 import java.util.*;
