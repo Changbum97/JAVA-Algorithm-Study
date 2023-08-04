@@ -3,7 +3,7 @@ package Programmers.hash;
 /**
  * 폰켓몬
  * https://school.programmers.co.kr/learn/courses/30/lessons/1845
- * Hash와 Set을 이용한 예제
+ * Hash와 Set을 사용한 예제
  */
 
 import java.util.*;
