@@ -3,7 +3,7 @@ package Programmers.stack_queue;
 /**
  * 기능개발
  * https://school.programmers.co.kr/learn/courses/30/lessons/42586
- * Queue를 사용한 예제
+ * Queue(FIFO)를 사용한 예제
  */
 
 import java.util.*;
