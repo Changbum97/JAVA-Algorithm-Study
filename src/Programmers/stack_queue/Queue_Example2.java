@@ -1,67 +1,78 @@
 package Programmers.stack_queue;
 
 /**
- * 기능개발
- * https://school.programmers.co.kr/learn/courses/30/lessons/42586
+ * 프로세스
+ * https://school.programmers.co.kr/learn/courses/30/lessons/42587
  * Queue(FIFO)를 사용한 예제
  */
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
 
-public class Queue_Example {
+public class Queue_Example2 {
 
     public static void main(String[] args) {
         Solution s = new Solution();
-        System.out.println(test(s.solution(new int[]{93, 30, 55}, new int[]{1, 30, 5}), new int[]{2, 1}));
-        System.out.println(test(s.solution(new int[]{95, 90, 99, 99, 80, 99}, new int[]{1, 1, 1, 1, 1, 1}), new int[]{1, 3, 2}));
-    }
-
-    static boolean test(int[] result, int answer[]) {
-        if (result.length != answer.length) return false;
-
-        for (int i = 0 ; i < result.length ; i ++) {
-            if (result[i] != answer[i]) {
-                return false;
-            }
-        }
-
-        return true;
+        System.out.println(s.solution(new int[]{2, 1, 3, 2}, 2) == 1);
+        System.out.println(s.solution(new int[]{1, 1, 9, 1, 1, 1}, 0) == 5);
     }
 
     static class Solution {
-        public int[] solution(int[] progresses, int[] speeds) {
 
-            // FIFO => Queue
-            Queue<Integer> queue = new LinkedList<>();
+        static int[] priorityCnt;
 
-            for (int i = 0 ; i < speeds.length ; i ++) {
-                int temp = (100 - progresses[i]) / speeds[i];
-                if ((100 - progresses[i]) % speeds[i] != 0) temp ++;
+        public int solution(int[] priorities, int location) {
 
-                queue.add(temp);
+            Queue<PI> queue = new LinkedList<>();
+            priorityCnt = new int[10];
+
+            for (int i = 0 ; i < priorities.length ; i ++) {
+                queue.add(new PI(priorities[i], i));
+                priorityCnt[priorities[i]] ++;
             }
-            queue.add(101);
 
-            int day = queue.poll();
-            int job = 1;
-            List<Integer> answerList = new ArrayList<>();
-
+            int nowPriority = getNowPriority(10);
+            int answer = 1;
             while(!queue.isEmpty()) {
-                int temp = queue.poll();
-                if (temp <= day) {
-                    job ++;
+                PI pi = queue.poll();
+                if (pi.priority != nowPriority) {
+                    queue.add(pi);
                 } else {
-                    answerList.add(job);
-                    day = temp;
-                    job = 1;
+                    if (pi.index == location) {
+                        return answer;
+                    } else {
+                        answer ++;
+                        priorityCnt[nowPriority] --;
+
+                        if (priorityCnt[nowPriority] == 0) {
+                            nowPriority = getNowPriority(nowPriority);
+                        }
+                    }
                 }
             }
 
-            int[] answer = new int[answerList.size()];
-            for(int i = 0 ; i < answerList.size() ; i ++) {
-                answer[i] = answerList.get(i);
-            }
             return answer;
+        }
+
+        int getNowPriority(int x) {
+            for(int i = x - 1 ; i >= 1 ; i --) {
+                if(priorityCnt[i] != 0) {
+                    return i;
+                }
+            }
+            return 1;
+        }
+
+        // Priority And Index
+        class PI {
+            int priority, index;
+
+            PI (int priority, int index) {
+                this.priority = priority;
+                this.index = index;
+            }
         }
     }
 }
