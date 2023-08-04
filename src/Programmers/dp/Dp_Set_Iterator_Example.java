@@ -10,6 +10,13 @@ import java.util.*;
 
 public class Dp_Set_Iterator_Example {
 
+    public static void main(String[] args) {
+        Solution s = new Solution();
+        System.out.println(s.solution(5, 12) == 4);
+        System.out.println(s.solution(5, 31168) == -1);
+        System.out.println(s.solution(4, 31) == 5);
+    }
+
     static class Solution {
         public int solution(int N, int number) {
 
