@@ -100,3 +100,55 @@ PriorityQueue<String> pq = new PriorityQueue<>(new Comparator<String>() {
 PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Collections.reverseOrder());
 ```
+
+## Map, Set
+
+### HashMap
+
+- Key, Value 존재
+- Key 중복 불가
+
+```java
+// 선언
+Map<String, Integer> map = new HashMap<>();
+// 추가
+map.put("a", 1);
+// Key에 "a"가 있는지 확인
+map.containsKey("a") == true
+// Key가 "a"인 value
+map.get("a")
+// Key가 "a"인 데이터 삭제
+map.remove("a")
+// map -> array
+map.keySet().toArray()
+// map 순회
+for (Map.Entry<String, Integer> entry : map.entrySet()) {
+    System.out.println(entry.getKey() + " : " + entry.getValue());
+}
+// map의 Value만 순회
+for (int value : map.values()) {
+    answer += value;
+}
+```
+
+### HashSet
+
+- Value만 존재
+- Value 중복 불가
+
+```java
+// 선언
+Set<Integer> set = new HashSet<>();
+// 추가
+set.add(10);
+// 삭제
+set.remove(10);
+// Set에 10이 있는지 체크
+set.contains(10) == true
+// iterator을 사용하여 Set 순회
+Iterator<Integer> it = set.iterator();
+while(it.hasNext()) {
+    int i = it.next();
+    System.out.println(i);
+}
+```
