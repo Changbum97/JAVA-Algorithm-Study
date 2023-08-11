@@ -11,6 +11,28 @@ Collections.sort(temp);
 Collections.sort(temp, Collections.reverseOrder());
 ```
 
+## Array 정렬
+
+```java
+// 오름차순 정렬
+int[] arr = new int[]{5, 3, 1, 2, 9};
+Arrays.sort(arr);
+
+// 내림차순 정렬 (int형은 안됨)
+Integer[] arr = new Integer[]{5, 3, 1, 2, 9};
+Arrays.sort(arr, Collectins.reverseOrder());
+
+// Comparator을 사용하여 정렬 기준 설정
+Integer[] arr = new Integer[]{5, 3, 1, 2, 9};
+Arrays.sort(arr, new Comparator<Integer>() {
+    @Override
+    public int compare(Integer x, Integer y) {
+        // 내림차순 정렬
+        return y - x;
+    }
+})
+```
+
 ## Queue, Stack
 
 ### Queue (FIFO)
