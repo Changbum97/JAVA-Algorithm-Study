@@ -3,7 +3,7 @@ package Programmers.hash;
 /**
  * 베스트앨범
  * https://school.programmers.co.kr/learn/courses/30/lessons/42579
- * Hash, Map, Priority Queue, Comparabled을 사용한 예
+ * Hash, Map, Priority Queue, Comparable을 사용한 예
  */
 
 import java.util.*;
