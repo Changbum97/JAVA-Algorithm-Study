@@ -52,7 +52,7 @@ pq.poll();
 pq.peek();
 ```
 
-### Priority Queue 정렬 방법 수정
+### Priority Queue 정렬 방법 수정 1 - Comparable 상속
 
 ```java
 PriorityQueue<SW> pq2 = new PriorityQueue<>();
@@ -74,6 +74,21 @@ class SW implements Comparable<SW> {
         return this.workTime - sw.workTime;
     }
 }
+```
+
+### Priority Queue 정렬 방법 수정 2 - Comparator 사용
+
+```java
+PriorityQueue<String> pq = new PriorityQueue<>(new Comparator<String>() {
+    // S1 + S2, S2 + S1을 비교하여 결과가 크게 나오도록 return
+    // ex) 6, 10 => 610 > 106 => 6이 앞에 오도록함
+    @Override
+    public int compare(String s1, String s2) {
+        int x = Integer.parseInt(s1 + s2);
+        int y = Integer.parseInt(s2 + s1);
+        return y - x;
+    }
+});
 ```
 
 ### MaxHeap, MinHeap
