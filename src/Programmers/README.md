@@ -155,8 +155,7 @@ for (int value : map.values()) {
 
 ### HashSet
 
-- Value만 존재
-- Value 중복 불가
+- Value만 존재, 중복 불가
 
 ```java
 // 선언
