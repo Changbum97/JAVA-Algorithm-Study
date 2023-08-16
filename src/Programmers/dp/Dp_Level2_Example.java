@@ -1,5 +1,11 @@
 package Programmers.dp;
 
+/**
+ * 멀리뛰기
+ * https://school.programmers.co.kr/learn/courses/30/lessons/12914
+ * Dp Level2 예제
+ */
+
 public class Dp_Level2_Example {
 
     public static void main(String[] args) {
