@@ -29,12 +29,12 @@ public class p2042 {
             }
         }
 
-        long[] tsp = new long[start * 2];
+        long[] tree = new long[start * 2];
         for (int i = 0 ; i < n ; i ++) {
-            tsp[start + i] = input[i];
+            tree[start + i] = input[i];
         }
         for (int i = start - 1 ; i >= 1 ; i --) {
-            tsp[i] = tsp[i * 2] + tsp[i * 2 + 1];
+            tree[i] = tree[i * 2] + tree[i * 2 + 1];
         }
 
         for (int i = 0 ; i < m ; i ++) {
@@ -44,9 +44,9 @@ public class p2042 {
 
             if (op == 1) {  // x번째 수를 y로 교체
                 int idx = start + x - 1;
-                long diff = y - tsp[idx];
+                long diff = y - tree[idx];
                 while(idx > 0) {
-                    tsp[idx] += diff;
+                    tree[idx] += diff;
                     idx /= 2;
                 }
             } else {    // x번째 수부터 y번째 수까지의 합
@@ -56,12 +56,12 @@ public class p2042 {
 
                 while (left <= right) {
                     if (left % 2 == 1) {    // left는 오른쪽 노드일때만 더해줌
-                        sum += tsp[left];
+                        sum += tree[left];
                     }
                     left = (left + 1) / 2;
 
                     if (right % 2 == 0) {   // right는 왼쪽 노드일때만 더해줌
-                        sum += tsp[right];
+                        sum += tree[right];
                     }
                     right = (right - 1) / 2;
                 }
