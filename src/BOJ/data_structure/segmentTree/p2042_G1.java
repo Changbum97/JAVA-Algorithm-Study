@@ -1,4 +1,4 @@
-package BOJ.segmentTree;
+package BOJ.data_structure.segmentTree;
 
 /**
  * 구간 합 구하기
