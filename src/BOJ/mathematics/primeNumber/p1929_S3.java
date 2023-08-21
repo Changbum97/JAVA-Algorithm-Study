@@ -2,13 +2,14 @@ package BOJ.mathematics.primeNumber;
 
 /**
  * 소수 구하기
+ * 실버 3
  * https://www.acmicpc.net/problem/1929
  */
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class p1929 {
+public class p1929_S3 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
