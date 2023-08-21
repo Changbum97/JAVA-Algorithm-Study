@@ -2,6 +2,7 @@ package BOJ.binarySearch.lis;
 
 /**
  * 가장 긴 증가하는 부분 수열 5
+ * 플래티넘 5
  * https://www.acmicpc.net/problem/14003
  */
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class p14003 {
+public class p14003_P5 {
 
     static List<DI> dp;
     static int[] route;
