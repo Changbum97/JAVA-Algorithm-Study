@@ -1,5 +1,10 @@
 package BOJ.mathematics.primeNumber;
 
+/**
+ * GCD 곱
+ * https://www.acmicpc.net/problem/14860
+ */
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -7,25 +12,22 @@ import java.util.Scanner;
 
 public class p14860 {
 
-    static final long mod = 1000000007;
+    private static final long mod = 1000000007;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         int m = sc.nextInt();
 
-        if (m > n) {
-            int temp = n;
-            n = m;
-            m = temp;
-        }
-
-        List<PrimeNumber> primeNumbers = getPrimeNumbers(m);
+        List<PrimeNumber> primeNumbers = getPrimeNumbers(Math.min(n, m));
         long answer = 1;
 
         for (PrimeNumber primeNumber : primeNumbers) {
+            // n * m 범위에 primeNumber.num이 곱해진 횟수
             long cnt = (n / primeNumber.num) * (m / primeNumber.num);
 
+            // primeNumber.num = 4라면 2는 이전에 계산
+            // 따라서 4인 경우 2만 한 번 더 곱해주면 됨
             answer *= power(primeNumber.root, cnt);
             answer %= mod;
         }
@@ -33,43 +35,8 @@ public class p14860 {
         System.out.println(answer);
     }
 
-    private static List<PrimeNumber> getPrimeNumbers(int x) {
-        boolean[] isPrime = new boolean[x + 1];
-        Arrays.fill(isPrime, true);
-
-        for (int i = 2 ; i * i <= x ; i ++) {
-            if (isPrime[i] == true) {
-                for (int j = i * 2 ; j <= x ; j += i) {
-                    isPrime[j] = false;
-                }
-            }
-        }
-
-        List<PrimeNumber> primeNumbers = new ArrayList<>();
-        for (int i = 2 ; i <= x ; i ++) {
-            if (isPrime[i]) {
-                long temp = i;
-                while(temp <= x) {
-                    primeNumbers.add(new PrimeNumber(i, temp));
-                    temp *= i;
-                }
-            }
-        }
-
-        return primeNumbers;
-    }
-
-    private static class PrimeNumber {
-        long root, num;
-
-        PrimeNumber(long root, long num) {
-            this.root = root;
-            this.num = num;
-        }
-    }
-
     /**
-     * n의 x승 (n^x)를 logN의 시간 복잡도로 계산
+     * n^x 계산을 logx만에 해결
      */
     private static long power(long n, long x) {
         if (x == 0) return 1;
@@ -85,5 +52,40 @@ public class p14860 {
         }
 
         return fullAnswer;
+    }
+
+    private static List<PrimeNumber> getPrimeNumbers(int x) {
+
+        List<PrimeNumber> primeNumbers = new ArrayList<>();
+
+        boolean[] isPrimeNumber = new boolean[x + 1];
+        Arrays.fill(isPrimeNumber, true);
+        isPrimeNumber[1] = false;
+
+        for (int i = 2 ; i <= x ; i ++) {
+            if (isPrimeNumber[i]) {
+                for (int j = i + i ; j <= x ; j += i) {
+                    isPrimeNumber[j] = false;
+                }
+
+                long temp = i;
+                while (temp <= x) {
+                    primeNumbers.add(new PrimeNumber(temp, i));
+                    temp *= i;
+                }
+            }
+        }
+
+        return primeNumbers;
+    }
+
+    private static class PrimeNumber {
+        // num = 8인 경우, root = 2
+        long num, root;
+
+        PrimeNumber(long num, long root) {
+            this.num = num;
+            this.root = root;
+        }
     }
 }
