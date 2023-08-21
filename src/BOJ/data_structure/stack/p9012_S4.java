@@ -27,7 +27,7 @@ public class p9012_S4 {
 
         for (int i = 0 ; i < str.length() ; i ++) {
             if (str.charAt(i) == '(') {
-                stack.add('(');
+                stack.push('(');
             } else {
                 if (stack.isEmpty() || stack.pop() != '(') {
                     return "NO";
