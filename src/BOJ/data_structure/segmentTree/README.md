@@ -7,6 +7,6 @@
 
 - [https://chb2005.tistory.com/83](https://chb2005.tistory.com/83)
 
-## 구간합
+## 구간 합 구하기
 
 - P2042
