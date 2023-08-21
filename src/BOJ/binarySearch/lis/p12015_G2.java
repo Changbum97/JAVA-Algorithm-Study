@@ -2,6 +2,7 @@ package BOJ.binarySearch.lis;
 
 /**
  * 가장 긴 증가하는 부분 수열 2
+ * 골드 2
  * https://www.acmicpc.net/problem/12015
  */
 
@@ -9,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class p12015 {
+public class p12015_G2 {
 
     static List<Integer> dp;
 
