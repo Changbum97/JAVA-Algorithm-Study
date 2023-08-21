@@ -8,7 +8,7 @@ package BOJ.segmentTree;
 
 import java.util.Scanner;
 
-public class p2042 {
+public class p2042_G1 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
