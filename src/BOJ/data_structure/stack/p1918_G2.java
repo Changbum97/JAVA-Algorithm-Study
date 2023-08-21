@@ -75,12 +75,12 @@ public class p1918_G2 {
                     while (!stack.isEmpty() && (stack.peek().equals("*") || stack.peek().equals("/"))) {
                         result += stack.pop();
                     }
-                    stack.add(list.get(i));
+                    stack.push(list.get(i));
                 } else {
                     while (!stack.isEmpty()) {
                         result += stack.pop();
                     }
-                    stack.add(list.get(i));
+                    stack.push(list.get(i));
                 }
             } else {
                 result += list.get(i);
