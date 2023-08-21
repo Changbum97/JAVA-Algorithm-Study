@@ -2,6 +2,7 @@ package BOJ.mathematics.primeNumber;
 
 /**
  * GCD 곱
+ * 플래티넘 4
  * https://www.acmicpc.net/problem/14860
  */
 
@@ -10,7 +11,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-public class p14860 {
+public class p14860_P4 {
 
     private static final long mod = 1000000007;
 
