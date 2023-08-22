@@ -1,4 +1,10 @@
-package BOJ.data_structure.stack;
+package BOJ.data_structure.deque;
+
+/**
+ * 연산자 끼워넣기 (3)
+ * 골드 4
+ * https://www.acmicpc.net/problem/15659
+ */
 
 import java.util.ArrayDeque;
 import java.util.Deque;
