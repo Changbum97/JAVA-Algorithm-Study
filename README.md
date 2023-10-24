@@ -5,7 +5,7 @@
 ## BOJ 제출 방법
 
 - package 정보 삭제
-- class명 Main 으로 수정 후 제출
+- class명 Main으로 수정 후 제출
 
 ## 프로그래머스 제출 방법
 
